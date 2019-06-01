@@ -39,6 +39,17 @@ Each file contains a number of c.file.data_block events. To read a file traverse
 |size|int|The data size in bytes. If this is missing the event should be ignored.|
 |mtime|int|The modification timestamp.|
 
+### c.file.chunk
+
+*state_key*: The state key of this chunk. The first chunk will have a state key of an empty string.
+
+|Content Key|Type|Description|
+|-|-|-|
+|url|string|An mxid specifying where the data is located. If this is missing the event should be treated is if it was empty.|
+|size|int|The data size in bytes. If this is missing the event should be treated is if it was empty.|
+|next|string|The state_key of the next chunk. If this is missing the event should be treated is if it was empty. If this points to a state_key that has already been visited, the file is corrupt, since that would result in an infinitely large file.|
+|mtime|int|The modification timestamp.|
+
 ## Timestamps
 
 Files and directories have two different timestamps, called ctime (change time) and mtime (modification time). Each timestamp has a precision of one millisecond.
