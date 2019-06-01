@@ -27,7 +27,7 @@ A directory contains a c.directory.entry state event for each file or subdirecto
 
 ## Files
 
-Each file contains a number of c.file.data_block events. To read a file traverse all these events ordered by their index.
+Each file contains a number of c.file.data_block events. To read a file traverse all these events ordered by their index. The data should be uploaded with a mimetype of "application/octet-stream". 
 
 ### c.file.data_block
 
@@ -52,7 +52,7 @@ A malicious homeserver could respond with different data for the same mxid. This
 
 ## Symlinks
 
-### x.files.symlink
+### c.symlink.destination
 
 *state_key*: An empty string
 
