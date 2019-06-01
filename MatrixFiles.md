@@ -45,8 +45,8 @@ Files and directories have two different timestamps, called ctime (change time) 
 
 ||ctime|mtime|
 |-|-|-|
-|File|The highest value of mtime in the c.file.data_block events.|The highest homeserver timestamp in any c.file.data_block event.|
-|Directory|The highest value of mtime in the c.directory.entry events.|The highest homeserver timestamp in any c.directory.entry event.|
+|File|The highest homeserver timestamp in any c.file.data_block event.|The highest value of mtime in the c.file.data_block events.|
+|Directory|The highest homeserver timestamp in any c.directory.entry event.|The highest value of mtime in the c.directory.entry events.|
 |Symlink|||
 
 
