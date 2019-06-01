@@ -74,6 +74,8 @@ A malicious homeserver could respond with different data for the same mxid. This
 
 ## Symlinks
 
+A symlink can be a relative link or an absolute link. In order to create an absolute link to another matrix file the destination should look like this: "/matrix/#room-alias:example.com/some-directory/some-file".
+
 ### c.symlink.destination
 
 *state_key*: An empty string
