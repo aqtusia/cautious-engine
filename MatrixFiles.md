@@ -39,6 +39,17 @@ Each file contains a number of c.file.data_block events. To read a file traverse
 |size|int|The data size in bytes. If this is missing the event should be ignored.|
 |mtime|int|The modification timestamp.|
 
+## Timestamps
+
+Files and directories have two different timestamps, called ctime (change time) and mtime (modification time). Each timestamp has a precision of one millisecond.
+
+||ctime|mtime|
+|-|-|-|
+|File|The highest value of mtime in the c.file.data_block events.|The highest homeserver timestamp in any c.file.data_block event.|
+|Directory|The highest value of mtime in the c.directory.entry events.|The highest homeserver timestamp in any c.directory.entry event.|
+|Symlink|||
+
+
 ## Security considerations
 
 Since a filename can contain any unicode character, a implementation should be prepared to handle maliciously generated filenames. This could be by escaping the filename or ignoring that file.
